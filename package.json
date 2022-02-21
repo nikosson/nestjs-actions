@@ -1,0 +1,54 @@
+{
+  "name": "@nikosson/nestjs-actions",
+  "version": "0.0.1",
+  "description": "NestJS actions module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rimraf -rf dist && tsc -p tsconfig.json",
+    "lint": "eslint",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nikosson/nestjs-actions#readme"
+  },
+  "bugs": {
+    "url": "https://github.com/nikosson/nestjs-actions/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/nikosson/nestjs-actions",
+  "keywords": [],
+  "author": "George Bordiuh <georgebordiuh@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@nestjs/common": "^8.0.0",
+    "@nestjs/core": "^8.0.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.3.0",
+    "typescript": "^4.4.3"
+  },
+  "devDependencies": {
+    "@nestjs/common": "8.3.1",
+    "@nestjs/core": "8.3.1",
+    "@nestjs/testing": "8.3.1",
+    "@types/jest": "27.4.0",
+    "@typescript-eslint/eslint-plugin": "5.12.0",
+    "@typescript-eslint/parser": "5.12.0",
+    "eslint": "8.9.0",
+    "eslint-config-prettier": "8.4.0",
+    "eslint-plugin-import": "2.25.4",
+    "jest": "27.5.1",
+    "prettier": "2.5.1",
+    "reflect-metadata": "0.1.13",
+    "rimraf": "3.0.2",
+    "ts-jest": "27.1.3",
+    "typescript": "4.5.5"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^8.0.0",
+    "@nestjs/core": "^8.0.0",
+    "reflect-metadata": "^0.1.13"
+  }
+}
