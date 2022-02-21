@@ -2,28 +2,28 @@ import { Injectable, Type } from '@nestjs/common';
 import { ModulesContainer } from '@nestjs/core';
 import { InstanceWrapper } from '@nestjs/core/injector/instance-wrapper';
 import { Module } from '@nestjs/core/injector/module';
-import { ActionHandlerInterface } from '../interfaces/action-handler.interface';
-import { ACTION_HANDLER_METADATA } from '../constants';
+import { HookHandlerInterface } from '../interfaces/hook-handler.interface';
+import { HOOK_HANDLER_METADATA } from '../constants';
 
 /**
- * This service will explore all action handlers across all modules.
+ * This service will explore all hook handlers across all modules.
  */
 @Injectable()
-export class ActionHandlersExplorerService {
+export class ExplorerService {
   constructor(private readonly modulesContainer: ModulesContainer) {}
 
   /**
-   * Retrieves Action Handlers available to the module.
+   * Retrieves hook handlers available to the module.
    */
   exploreHandlers() {
     const modules = [...this.modulesContainer.values()];
 
-    const actionHandlers = this.flatMap<ActionHandlerInterface>(
+    const hookHandlers = this.flatMap<HookHandlerInterface>(
       modules,
-      (instance) => this.filterProvider(instance, ACTION_HANDLER_METADATA),
+      (instance) => this.filterProvider(instance, HOOK_HANDLER_METADATA),
     );
 
-    return { actionHandlers };
+    return { hookHandlers };
   }
 
   private flatMap<T>(

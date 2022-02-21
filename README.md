@@ -1,4 +1,4 @@
-# Actions for NestJS
+# Hooks for NestJS
 
 
 ## Installation

@@ -1,1 +1,1 @@
-export const ACTION_HANDLER_METADATA = '__action_handler__';
+export const HOOK_HANDLER_METADATA = '__hook_handler__';
