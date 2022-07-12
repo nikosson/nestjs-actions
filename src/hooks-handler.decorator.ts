@@ -1,4 +1,4 @@
-import { HookInterface } from './interfaces/hook.interface';
+import { HookInterface } from './interfaces';
 import { HOOK_HANDLER_METADATA } from './constants';
 
 export const HooksHandler = (...events: HookInterface[]): ClassDecorator => {

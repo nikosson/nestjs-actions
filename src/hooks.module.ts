@@ -1,6 +1,6 @@
 import { Module, OnModuleInit } from '@nestjs/common';
 import { HooksBus } from './hooks.bus';
-import { ExplorerService } from './services/explorer.service';
+import { ExplorerService } from './services';
 
 @Module({
   providers: [HooksBus, ExplorerService],

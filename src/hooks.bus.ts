@@ -1,8 +1,8 @@
 import { Injectable, Type } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
 import { HOOK_HANDLER_METADATA } from './constants';
-import { HookHandlerInterface } from './interfaces/hook-handler.interface';
-import { HookInterface } from './interfaces/hook.interface';
+import { HookHandlerInterface } from './interfaces';
+import { HookInterface } from './interfaces';
 
 type HookHandler = Type<HookHandlerInterface<HookInterface>>;
 

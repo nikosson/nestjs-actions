@@ -3,7 +3,7 @@ import { HooksModule } from '../hooks.module';
 import { Injectable, Module } from '@nestjs/common';
 import { HooksBus } from '../hooks.bus';
 import { HooksHandler } from '../hooks-handler.decorator';
-import { HookHandlerInterface } from '../interfaces/hook-handler.interface';
+import { HookHandlerInterface } from '../interfaces';
 
 jest.setTimeout(20000);
 

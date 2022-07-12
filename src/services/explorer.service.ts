@@ -2,7 +2,7 @@ import { Injectable, Type } from '@nestjs/common';
 import { ModulesContainer } from '@nestjs/core';
 import { InstanceWrapper } from '@nestjs/core/injector/instance-wrapper';
 import { Module } from '@nestjs/core/injector/module';
-import { HookHandlerInterface } from '../interfaces/hook-handler.interface';
+import { HookHandlerInterface } from '../interfaces';
 import { HOOK_HANDLER_METADATA } from '../constants';
 
 /**
@@ -28,7 +28,7 @@ export class ExplorerService {
 
   private flatMap<T>(
     modules: Module[],
-    callback: (instance: InstanceWrapper) => Type<any> | undefined,
+    callback: (instance: InstanceWrapper) => Type | undefined,
   ): Type<T>[] {
     const items = modules
       .map((module) => [...module.providers.values()].map(callback))
@@ -40,7 +40,7 @@ export class ExplorerService {
   private filterProvider(
     wrapper: InstanceWrapper,
     metadataKey: string,
-  ): Type<any> | undefined {
+  ): Type | undefined {
     const { instance } = wrapper;
     if (!instance) {
       return undefined;
@@ -51,12 +51,12 @@ export class ExplorerService {
   private extractMetadata(
     instance: Record<string, any>,
     metadataKey: string,
-  ): Type<any> | undefined {
+  ): Type | undefined {
     if (!instance.constructor) {
       return undefined;
     }
     const metadata = Reflect.getMetadata(metadataKey, instance.constructor);
 
-    return metadata ? (instance.constructor as Type<any>) : undefined;
+    return metadata ? (instance.constructor as Type) : undefined;
   }
 }
